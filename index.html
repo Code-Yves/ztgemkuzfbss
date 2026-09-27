@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#8A2F17">
+<title>Boston + Salem trip, Oct 10 to 13</title>
+<style>
+:root{--rust:#B8472A;--brown:#6B3E26;--gold:#D99A2B;--olive:#5E7A3A;--cream:#FBF6EE;--ink:#2B211B;--muted:#6E5D52;--line:#E8DCCB;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--cream);color:var(--ink);font:18px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--brown);line-height:1.2;}
+.hero{background:linear-gradient(135deg,#8A2F17,#B8472A 55%,#D99A2B);color:#fff;padding:22px 18px 18px;}
+.hero h1{color:#fff;font-size:28px;margin:4px 0 8px;}
+.kicker{margin:0;font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.9;}
+.updated{margin:0;font-size:15px;opacity:.95;}
+.daynav{position:sticky;top:0;z-index:10;display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:rgba(251,246,238,.97);border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.daynav::-webkit-scrollbar{display:none;}
+.daynav a{flex:0 0 auto;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--brown);font-weight:700;font-size:16px;text-decoration:none;}
+main{max-width:720px;margin:0 auto;padding:0 14px 24px;}
+section{scroll-margin-top:64px;padding-top:18px;}
+h2{font-size:25px;margin:6px 0 8px;display:flex;align-items:center;gap:10px;}
+h3{font-size:20px;margin:0 0 8px;}
+h4{margin:14px 0 6px;font-size:17px;color:var(--muted);}
+.dot{flex:0 0 auto;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;color:#fff;font:700 11px/1 -apple-system,system-ui,sans-serif;letter-spacing:.05em;}
+.dot b{font-size:20px;line-height:1.05;}
+.rust{background:var(--rust);} .brown{background:var(--brown);} .olive{background:var(--olive);} .gold{background:var(--gold);}
+.sub{margin:0 0 10px;color:var(--muted);font-size:16px;}
+.small{font-size:15px;color:var(--muted);}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0;}
+.card.tip{background:#FFF8E8;border-left:5px solid var(--gold);}
+.accent-rust{border-left:5px solid var(--rust);} .accent-olive{border-left:5px solid var(--olive);}
+.card ul{margin:0;padding-left:20px;} .card li{margin:6px 0;}
+.card ul.plain{list-style:none;padding-left:0;} .card ul.plain li{padding:6px 0;border-bottom:1px dotted var(--line);} .card ul.plain li:last-child{border:0;}
+.tl{list-style:none;margin:0;padding:0;background:#fff;border:1px solid var(--line);border-radius:14px;}
+.tl li{display:block;padding:12px 16px;border-bottom:1px solid var(--line);}
+.tl li:last-child{border-bottom:0;}
+.tl .time{display:block;color:var(--rust);font-weight:700;font-size:15px;margin-bottom:2px;}
+.tl p{margin:3px 0 0;color:var(--muted);font-size:16px;}
+.oneline{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:12px 16px;margin:12px 0;}
+.tag{display:inline-block;font:700 12px/1.6 -apple-system,system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:1px 9px;border-radius:999px;vertical-align:2px;white-space:nowrap;}
+.tag.ok{background:#D6EAD3;color:#23572A;} .tag.est,.tag.todo{background:#FBEBC8;color:#7A5308;} .tag.open{background:#E4ECD9;color:#3E5423;}
+a{color:#8A2F17;text-decoration-color:#C9B8A6;text-underline-offset:2px;}
+a.map::before{content:"📍 ";text-decoration:none;display:inline;}
+a.tel::before{content:"📞 ";}
+.glance{display:grid;gap:8px;}
+.glance a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;color:var(--ink);text-decoration:none;}
+.glance b{display:block;font-family:Georgia,serif;color:var(--brown);font-size:19px;}
+figure{margin:12px 0;}
+figure img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#fff;}
+figcaption{font-size:13px;color:var(--muted);margin-top:4px;}
+.tablewrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:16px;}
+th{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:6px 6px;border-bottom:2px solid var(--line);}
+td{padding:7px 6px;border-bottom:1px solid var(--line);white-space:nowrap;}
+tr.pick td{background:#EEF3E6;font-weight:700;}
+tr.last td{color:#8A2F17;font-weight:700;}
+.chips span{display:inline-block;background:#E4ECD9;color:#3E5423;font-weight:700;border-radius:999px;padding:4px 12px;margin:0 6px 6px 0;font-size:15px;}
+ul.check{list-style:none;padding:0;background:#fff;border:1px solid var(--line);border-radius:14px;margin:0;}
+ul.check li{padding:12px 16px 12px 46px;border-bottom:1px solid var(--line);position:relative;}
+ul.check li:last-child{border:0;}
+ul.check li::before{content:"";position:absolute;left:16px;top:15px;width:18px;height:18px;border:2px solid var(--olive);border-radius:4px;}
+footer{max-width:720px;margin:0 auto;padding:10px 14px 40px;color:var(--muted);font-size:14px;}
+footer button{font:inherit;font-weight:700;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--brown);}
+@media print{
+  @page{size:Letter;margin:0.5in;}
+  body{background:#fff;font-size:10.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .daynav,.noprint,figcaption{display:none !important;}
+  .hero{padding:14px 18px;border-radius:10px;}
+  main{max-width:none;padding:0;}
+  section{padding-top:8px;}
+  #sat,#sun,#mon,#hotels{break-before:page;}
+  body{font-size:10pt;line-height:1.35;}
+  .tl li{display:grid;grid-template-columns:1.35in 1fr;gap:8px;padding:5px 10px;}
+  .tl .time{margin:0;font-size:9pt;}
+  .tl p{font-size:9pt;margin:1px 0 0;}
+  .card{padding:8px 12px;margin:7px 0;}
+  .card li{margin:2px 0;}
+  .oneline{padding:7px 12px;margin:7px 0;}
+  td{padding:3px 6px;font-size:9.5pt;} th{padding:3px 6px;}
+  .glance{grid-template-columns:1fr 1fr;}
+  ul.check li{padding:6px 12px 6px 40px;} ul.check li::before{top:8px;}
+  .card,.tl li,.oneline,figure,tr{break-inside:avoid;}
+  figure img{max-height:3.8in;width:auto;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  a.map::before,a.tel::before{content:"";}
+  h2{font-size:18pt;} h3{font-size:12.5pt;}
+}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">Family road trip · 2 adults + 2 teens</p>
+  <h1>Boston + Salem<br>October 10 to 13, 2026</h1>
+  <p class="updated">Last updated Sep 27, 2026</p>
+</header>
+<nav class="daynav" aria-label="Jump to section">
+  <a href="#sat">Sat</a><a href="#sun">Sun</a><a href="#mon">Mon</a><a href="#tue">Tue</a><a href="#hotels">Hotels</a><a href="#food">Food</a><a href="#ev">EV</a><a href="#todo">To do</a>
+</nav>
+<main>
+
+<section id="top" class="intro">
+  <div class="glance">
+    <a href="#sat"><b>Sat Oct 10</b><span>Drive to Newington NH. Ecobean stop. USS Albacore. Dinner at 110 Grill.</span></a>
+    <a href="#sun"><b>Sun Oct 11</b><span>USS Constitution, market lunch, North End, early dinner. Then Encore.</span></a>
+    <a href="#mon"><b>Mon Oct 12</b><span>Salem by commuter rail. Truck stays charging at Encore.</span></a>
+    <a href="#tue"><b>Tue Oct 13</b><span>Leave Encore about 10 to 11am. Home to Ottawa.</span></a>
+  </div>
+  <figure><a href="overview.jpg" target="_blank" rel="noopener"><img src="overview.jpg" alt="Route map: Ottawa to Portsmouth, Boston and Salem" width="1200" height="675" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+  <p class="small">Road routes from OSRM. Monday rail line from MBTA data. For planning only.</p>
+</section>
+
+
+<section id="sat" class="day">
+  <h2><span class="dot rust">SAT<b>10</b></span> Ottawa to Portsmouth</h2>
+  <p class="sub"><span class="tag est">All times are estimates</span> Check Google Maps the night before.</p>
+  <ol class="tl">
+<li><span class="time">6:00am</span><div><b>Leave Ottawa</b><p>Take the 417 to Montreal, then the A30 and A35 south.</p></div></li>
+<li><span class="time">Est.</span><div><b>Cross at Philipsburg QC / Highgate Springs VT</b><p>Open 24 hours. Budget 20 to 45 minutes. Then I-89 south.</p></div></li>
+<li><span class="time">Est. 10:00 to 10:45am</span><div><b>Ecobean Cafe, South Burlington VT</b><p>3.5 to 4 hr from Ottawa plus the border. Just off I-89 exit 14. Stop about 30 to 45 min.</p></div></li>
+<li><span class="time">Est. 3 to 3.5 hr</span><div><b>I-89 south to Concord NH, then Route 4 east</b><p>On to Portsmouth and Newington.</p></div></li>
+<li><span class="time">Est. 2:00pm</span><div><b>Arrive at Everhome Suites</b><p>Target arrival. Check-in is 3:00pm.</p></div></li>
+<li><span class="time">Est. 3:30pm</span><div><b>USS Albacore</b><p>About 15 to 20 min drive from the hotel. Aim to be aboard by about 3:30pm. Done by about 4:15 to 4:30pm. Closes 5pm.</p></div></li>
+<li><span class="time">5:30pm</span><div><b>Dinner at 110 Grill Portsmouth</b><p>About 5 min from the Albacore. Reserved.</p></div></li>
+</ol>
+  <div class="card tip"><h3>🛂 Border tips</h3><ul class=""><li>Oct 10 is Canadian Thanksgiving weekend. Expect heavier southbound traffic.</li><li>Budget 20 to 45 minutes at the border.</li><li>Check the live Highgate Springs wait at <a href="https://bwt.cbp.gov/" target="_blank" rel="noopener">bwt.cbp.gov</a> before leaving.</li><li>Backup: A15 to Lacolle / Champlain, then US-2 across into Burlington. Adds about 20 to 30 minutes.</li></ul></div>
+  <div class="card "><h3>☕ Ecobean Cafe</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=150+Dorset+St%2C+Suite+304%2C+South+Burlington+VT+05403" target="_blank" rel="noopener">150 Dorset St, Suite 304, South Burlington VT 05403</a></li><li>Sat 9am to 7pm. Closed Sunday.</li><li>Organic coffee, smoothies, bowls, breakfast.</li><li><a class="tel" href="tel:+18024970510">802-497-0510</a>. No phone orders. Order online at <a href="https://ecobeancafe.com/" target="_blank" rel="noopener">ecobeancafe.com</a>.</li></ul></div>
+  <div class="card "><h3>⚓ USS Albacore</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Albacore+Park%2C+569+Submarine+Way%2C+Portsmouth+NH" target="_blank" rel="noopener">Albacore Park, 569 Submarine Way, Portsmouth NH</a></li><li>Open 9:30am to 5:00pm on Sat Oct 10.</li><li>Ages 13+: $14. Both kids are 13+, so $14 each ($56 for 4).</li><li><b>Not booked yet.</b></li><li>If hotel arrival slips past about 4:15pm, skip it. Sunday at 9:30am is the backup. That pushes the Constitution later.</li></ul></div>
+  <div class="card accent-rust"><h3>🍽️ Dinner: 110 Grill Portsmouth, 5:30pm <span class="tag ok">Reserved</span></h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=103+Hanover+St%2C+Portsmouth+NH+03801" target="_blank" rel="noopener">103 Hanover St (Portwalk Place), Portsmouth NH 03801</a></li><li><a class="tel" href="tel:+16033738312">(603) 373-8312</a> · Sat 11:30am to 10pm</li><li>Party of 4. Booked, confirmation in email. No deposit.</li><li>100% of the core menu can be made gluten free.</li><li>AllergyEats allergy-friendly. The manager on staff handles allergy orders.</li><li><b>Say dairy-free, gluten-free and soy-free when ordering.</b></li></ul></div>
+  <figure><a href="portsmouth.jpg" target="_blank" rel="noopener"><img src="portsmouth.jpg" alt="Portsmouth area map: Everhome Suites, USS Albacore, 110 Grill" width="1000" height="640" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+</section>
+
+
+<section id="sun" class="day">
+  <h2><span class="dot brown">SUN<b>11</b></span> Portsmouth, then Boston, then Encore</h2>
+  <p class="sub"><span class="tag est">Times are estimates</span> Check Google Maps the night before.</p>
+  <ol class="tl">
+<li><span class="time">10:30 to 11:00am</span><div><b>Leave Portsmouth</b><p>Everhome checkout is 11am.</p></div></li>
+<li><span class="time">Est. 1 to 1.25 hr</span><div><b>Drive to the Charlestown Navy Yard and the USS Constitution</b><p>Park at Nautica Garage. Spend about 1 to 1.5 hr at the ship and the Navy Yard.</p></div></li>
+<li><span class="time">Est. 12:30pm</span><div><b>Drive a few minutes to the North End and Haymarket area</b><p>Park for the afternoon at Haymarket Center Garage, entrance at 136 Blackstone St.</p></div></li>
+<li><span class="time">Lunch</span><div><b>Boston Public Market, 100 Hanover St</b><p>Jennifer Lee's Shoppe inside.</p></div></li>
+<li><span class="time">Afternoon</span><div><b>Sightseeing on foot</b><p>North End, Faneuil Hall and Quincy Market, the waterfront. Aquarium optional, depending on time.</p></div></li>
+<li><span class="time">4:30 to 5:00pm</span><div><b>Early Italian dinner in the North End</b><p>Option: Terramia Ristorante.</p></div></li>
+<li><span class="time">After dinner</span><div><b>Walk back to Haymarket Garage, drive 10 to 15 min to Encore</b><p>Check in (from 4pm) and relax.</p></div></li>
+</ol>
+  <p class="oneline"><b>The day in one line:</b> Portsmouth, USS Constitution, park at Haymarket, Boston Public Market lunch, North End / Faneuil Hall / Aquarium area, early dinner, Encore. Only two parking stops, and you're done driving for the night after dinner.</p>
+  <div class="card "><h3>⚓ USS Constitution and Navy Yard</h3><ul class=""><li>Free. Open 10am to 6pm. Photo ID for ages 18+. Security screening.</li><li>Can close at short notice for Navy operations or weather.</li><li>Museum next door: by donation. USS Cassin Young: do not count on it.</li><li><b>Parking:</b> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Nautica+Parking+Garage%2C+88+Constitution+Rd%2C+Charlestown+MA" target="_blank" rel="noopener">Nautica Parking Garage, 88 Constitution Rd, Charlestown MA</a>. Across from the Navy Yard Visitor Center. About a 5 to 10 min walk to the ship. Validate at the USS Constitution Museum.</li><li><a href="https://www.navy.mil/USS-Constitution/Hours-Visitor-Info/" target="_blank" rel="noopener">Visitor info (navy.mil)</a></li></ul></div>
+  <div class="card "><h3>🅿️ Afternoon parking: Haymarket</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Haymarket+Center+Garage%2C+136+Blackstone+St%2C+Boston+MA" target="_blank" rel="noopener">Haymarket Center Garage, entrance at 136 Blackstone St</a>. Cars enter and exit on Sudbury St.</li><li>Boston Public Market validates $3 for up to 3 hr with a purchase. Regular rates apply after that.</li><li><b>Parking from about 12:30pm until after dinner is likely 5 to 6 hr, so expect regular rates for the extra time. Posted weekend rate: $16 from 1.5 hr until 5am.</b></li><li><a href="https://bostonpublicmarket.org/visit/parking/" target="_blank" rel="noopener">Market parking info</a></li></ul></div>
+  <div class="card accent-olive"><h3>🥪 Lunch: Boston Public Market</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Boston+Public+Market%2C+100+Hanover+St%2C+Boston+MA" target="_blank" rel="noopener">100 Hanover St, Boston</a>. <b>Jennifer Lee's Shoppe</b> inside is Top 9 allergen free and vegan, with sweet and savory items.</li><li><b>Savory items contain coconut.</b></li><li><a href="https://bostonpublicmarket.org/" target="_blank" rel="noopener">bostonpublicmarket.org</a> · <a href="https://bostonpublicmarket.org/vendors/jennifer-lees-allergen-friendly-vegan-shoppe/" target="_blank" rel="noopener">Jennifer Lee's page</a></li></ul></div>
+  <div class="card "><h3>🚶 Walk, don't move the car</h3><ul class=""><li>From the market: North End 3 min. Faneuil Hall and Quincy Market 3 min. Aquarium 13 min.</li><li><b>Aquarium (optional):</b> <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=New+England+Aquarium%2C+1+Central+Wharf%2C+Boston+MA" target="_blank" rel="noopener">1 Central Wharf</a>. Timed tickets. Adults $39.95, teens pay adult. Last entry 4:40pm. Can sell out on Oct 11. Not booked.</li></ul></div>
+  <div class="card accent-rust"><h3>🍝 Dinner option: Terramia Ristorante</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Terramia+Ristorante%2C+98+Salem+St%2C+Boston+MA+02113" target="_blank" rel="noopener">98 Salem St, Boston MA 02113</a> · <a class="tel" href="tel:+16173405552">(617) 340-5552</a></li><li>Opens 3:30pm Sundays. Has gluten-free options.</li><li><b>Contact them ahead about the dairy and soy allergies.</b></li><li><a href="https://terramiaristorante.com/" target="_blank" rel="noopener">terramiaristorante.com</a></li></ul></div>
+  <p class="oneline tipline"><b>If Saturday slips:</b> the Albacore moves to Sunday at its 9:30am opening. Leave Portsmouth after that. Everything shifts about an hour later.</p>
+  <figure><a href="sunday.jpg" target="_blank" rel="noopener"><img src="sunday.jpg" alt="Sunday map: USS Constitution, Haymarket, Terramia, Aquarium, Encore" width="1000" height="760" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+</section>
+
+
+<section id="mon" class="day">
+  <h2><span class="dot olive">MON<b>12</b></span> Salem by commuter rail</h2>
+  <p class="sub"><span class="tag ok">Weekday train schedule</span> US holiday. Train times from the MBTA. Other times are estimates.</p>
+  <ol class="tl">
+<li><span class="time">Est. 8:50am</span><div><b>Leave the truck at Encore, plugged in</b><p>J1772 Level 2 in the self-park garage. Rideshare about 10 min to Chelsea station.</p></div></li>
+<li><span class="time">9:16am</span><div><b>Train from Chelsea to Salem (Train 27)</b><p>Suggested. Arrives Salem 9:37am. About 21 min.</p></div></li>
+<li><span class="time">Est. 9:45am</span><div><b>Walk into downtown Salem</b><p>About 7 min to Essex St, about 10 min to the Salem Witch Museum.</p></div></li>
+<li><span class="time">Day</span><div><b>Salem activities <span class="tag open">To plan</span></b><p>Not decided yet.</p></div></li>
+<li><span class="time">Later</span><div><b>Train from Salem back to Chelsea</b><p>Pick one from the list below. About 21 min.</p></div></li>
+<li><span class="time">Est. 20 min later</span><div><b>Rideshare from Chelsea to Encore</b><p>About 10 min. Evening at Encore.</p></div></li>
+</ol>
+  <p class="oneline"><b>The day in one line:</b> Encore, rideshare to Chelsea, train to Salem, walk downtown, Salem day, train back to Chelsea, rideshare to Encore. No driving or parking in Salem, and the truck charges all day.</p>
+  <div class="card" id="trains">
+    <h3>🚆 Train times, Mon Oct 12</h3>
+    <p class="small">Newburyport/Rockport Line, regular weekday schedule. Recheck the week before on <a href="https://www.mbta.com/schedules/CR-Newburyport/timetable" target="_blank" rel="noopener">mbta.com</a>.</p>
+    <h4>To Salem</h4>
+    <div class="tablewrap"><table><tr><th>Train</th><th>North Sta.</th><th>Chelsea</th><th>Salem</th></tr><tr><td>125</td><td>8:35am</td><td>8:46am</td><td>9:07am</td></tr><tr class="pick"><td>27</td><td>9:05am</td><td>9:16am</td><td>9:37am</td></tr><tr><td>1129</td><td>9:35am</td><td>9:46am</td><td>10:07am</td></tr><tr><td>131</td><td>10:05am</td><td>10:16am</td><td>10:37am</td></tr><tr><td>33</td><td>10:35am</td><td>10:46am</td><td>11:07am</td></tr><tr><td>137</td><td>11:35am</td><td>11:46am</td><td>12:07pm</td></tr></table></div>
+    <h4>Back from Salem</h4>
+    <div class="tablewrap"><table><tr><th>Train</th><th>Salem</th><th>Chelsea</th><th>North Sta.</th></tr><tr><td>148</td><td>2:57pm</td><td>3:18pm</td><td>3:34pm</td></tr><tr><td>1150</td><td>3:27pm</td><td>3:48pm</td><td>4:03pm</td></tr><tr><td>52</td><td>3:57pm</td><td>4:18pm</td><td>4:34pm</td></tr><tr><td>154</td><td>4:25pm</td><td>4:46pm</td><td>5:02pm</td></tr><tr><td>58</td><td>5:19pm</td><td>5:40pm</td><td>5:56pm</td></tr><tr><td>162</td><td>5:52pm</td><td>6:13pm</td><td>6:32pm</td></tr><tr><td>66</td><td>6:27pm</td><td>6:48pm</td><td>7:04pm</td></tr><tr><td>172</td><td>7:29pm</td><td>7:50pm</td><td>8:06pm</td></tr><tr><td>76</td><td>8:27pm</td><td>8:47pm</td><td>9:03pm</td></tr><tr class="last"><td>88 (last)</td><td>11:05pm</td><td>11:26pm</td><td>11:42pm</td></tr></table></div>
+    <p class="small">Also 9:35pm and 10:05pm from Salem. Source: mbta.com, checked Sep 27.</p>
+  </div>
+  <div class="card "><h3>🎟️ Fares</h3><ul class=""><li>Salem is Zone 3: <b>$8 one way per person</b>. Round trip for four: $64.</li><li>Teens pay full fare. Only kids 11 and under ride free. Student discounts are for enrolled Massachusetts schools only.</li><li><b>Cheaper: a $10 Columbus Day Holiday Weekend Pass each</b> (unlimited, Sat Oct 10 to Mon Oct 12). $40 for four. mTicket app, on sale from Oct 5.</li><li>No reservations, any train. Activate in mTicket before boarding. No ticket machines at Chelsea or Salem.</li></ul></div>
+  <div class="card "><h3>👥 Good to know</h3><ul class=""><li>Oct 12 is Columbus Day / Indigenous Peoples' Day in the US and Thanksgiving in Canada.</li><li>The MBTA runs its regular weekday schedule on Oct 12. The extra Haunted Happenings trains are weekends only.</li><li>Salem's event restrictions cover Oct 10 to 12. Expect crowded trains, most of all on returns late in the day and after dark.</li><li><b>Return gaps: none from 4:25 to 5:19pm or 6:27 to 7:29pm. Do not count on the last train.</b></li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Chelsea+station%2C+174+Everett+Ave%2C+Chelsea+MA" target="_blank" rel="noopener">Chelsea station, 174 Everett Ave</a>: rideshare pickup and drop-off. No parking. Ramp to the platform.</li><li>Backup: <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=North+Station%2C+135+Causeway+St%2C+Boston+MA" target="_blank" rel="noopener">North Station, 135 Causeway St</a>. Trains leave 11 min before Chelsea.</li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Salem+station%2C+252+Bridge+St%2C+Salem+MA" target="_blank" rel="noopener">Salem station, 252 Bridge St</a> · <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Salem+Witch+Museum%2C+19+1%2F2+Washington+Square+N%2C+Salem+MA" target="_blank" rel="noopener">Salem Witch Museum</a></li><li>The truck stays at Encore all day, charging.</li></ul></div>
+  <figure><a href="monday.jpg" target="_blank" rel="noopener"><img src="monday.jpg" alt="Monday map: Encore, Chelsea station, Salem station, downtown Salem" width="1000" height="860" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+</section>
+
+
+<section id="tue" class="day">
+  <h2><span class="dot gold">TUE<b>13</b></span> Home to Ottawa</h2>
+  <ol class="tl">
+<li><span class="time">Est. 10 to 11am</span><div><b>Leave Encore</b><p>Check-out is 11am. Expect holiday-weekend traffic.</p></div></li>
+</ol>
+</section>
+
+
+<section id="hotels">
+  <h2>🏨 Hotels and bookings</h2>
+  <div class="card "><h3>Everhome Suites Portsmouth-Newington <span class="tag ok">Booked</span></h3><ul class=""><li>Sat Oct 10 to Sun Oct 11. Booked, confirmation in email. Non-refundable.</li><li>Check-in 3pm. Check-out 11am.</li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Everhome+Suites%2C+2109+Woodbury+Ave%2C+Newington+NH" target="_blank" rel="noopener">2109 Woodbury Ave, Newington NH</a></li><li><a class="tel" href="tel:+16033194683">(603) 319-4683</a></li><li>Suite, 2 queens, full kitchen.</li></ul></div>
+  <div class="card "><h3>Encore Boston Harbor <span class="tag ok">Booked</span></h3><ul class=""><li>Sun Oct 11 to Tue Oct 13. Booked, confirmation in email. Non-refundable. Cannot extend.</li><li>Check-in 4pm. Check-out 11am. Early check-in from 11am if available: call <a class="tel" href="tel:+18577707000">(857) 770-7000</a>.</li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Encore+Boston+Harbor%2C+1+Broadway%2C+Everett+MA" target="_blank" rel="noopener">1 Broadway, Everett MA</a></li><li>Premier Room, 2 doubles, harbor view.</li><li>Free self-parking. EV chargers in the garage (see EV charging).</li></ul></div>
+  <div class="card "><h3>Reservations and tickets</h3><ul class="plain"><li><b>110 Grill, Sat 5:30pm</b> <span class="tag ok">Reserved</span> Party of 4. Confirmation in email.</li><li><b>USS Albacore, Sat</b> <span class="tag todo">Not booked</span></li><li><b>USS Constitution, Sun</b> <span class="tag ok">No tickets needed</span> Free. First come, first served.</li><li><b>Aquarium, Sun</b> <span class="tag open">Optional</span> Decide on Aquarium tickets.</li><li><b>Terramia, Sun dinner</b> <span class="tag todo">To do</span> Contact about dairy and soy.</li><li><b>Mon train to Salem</b> <span class="tag open">No booking</span> Buy fares in mTicket (from Oct 5).</li></ul></div>
+</section>
+
+
+<section id="food">
+  <h2>🥗 Dietary needs</h2>
+  <p class="chips"><span>Dairy-free</span><span>Gluten-free</span><span>Soy-free</span></p>
+  <p>Check menus and ask about ingredients at every stop. Say all three every time: dairy-free, gluten-free and soy-free.</p>
+  <div class="card "><h3>110 Grill · Portsmouth NH (Sat dinner, reserved)</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=103+Hanover+St%2C+Portsmouth+NH+03801" target="_blank" rel="noopener">103 Hanover St (Portwalk Place)</a> · <a class="tel" href="tel:+16033738312">(603) 373-8312</a></li><li>100% of the core menu can be made gluten free. AllergyEats allergy-friendly. The manager on staff handles allergy orders.</li><li><b>Say dairy-free, gluten-free and soy-free when ordering.</b></li></ul></div>
+  <div class="card "><h3>Jennifer Lee's Bakery · Boston Public Market (Sun lunch)</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Boston+Public+Market%2C+100+Hanover+St%2C+Boston+MA" target="_blank" rel="noopener">100 Hanover St, Boston</a> · Stall opens 10am · Market Sun 8am to 6pm</li><li>Vegan and top 9 allergen free, including dairy, gluten and soy. Savory lunch items served all day.</li><li><b>Savory items contain coconut and may contain legumes.</b></li></ul></div>
+  <div class="card "><h3>Terramia Ristorante · Boston North End (Sun dinner option)</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Terramia+Ristorante%2C+98+Salem+St%2C+Boston+MA+02113" target="_blank" rel="noopener">98 Salem St</a> · <a class="tel" href="tel:+16173405552">(617) 340-5552</a></li><li>Gluten-free options. <b>Contact them ahead about dairy and soy.</b></li></ul></div>
+  <div class="card "><h3>The Green Room · Portsmouth NH</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=The+Green+Room%2C+41+Vaughan+Mall%2C+Portsmouth+NH" target="_blank" rel="noopener">41 Vaughan Mall</a> · Weekends 7am to 5pm</li><li>Smoothies, bowls, and organic juices. Possible early Sunday breakfast.</li></ul></div>
+  <div class="card "><h3>Bite Me Kupcakez · Merrimack NH (backup)</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Bite+Me+Kupcakez%2C+4+Mound+Court%2C+Merrimack+NH" target="_blank" rel="noopener">4 Mound Court</a> · <a class="tel" href="tel:+16036744459">603-674-4459</a> · Sat 9:30am to 5:30pm</li><li>Dedicated gluten-free and nut-free bakery and cafe. Has dairy-free and soy-free options.</li><li><b>Call to confirm the dairy-free cheese is soy-free. Off the Route 4 path.</b></li></ul></div>
+  <div class="card "><h3>Troy's Fresh Kitchen · Londonderry NH (backup)</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Troy%27s+Fresh+Kitchen%2C+4+Orchard+View+Dr%2C+Londonderry+NH" target="_blank" rel="noopener">4 Orchard View Dr</a> · Sat 8am to 2pm</li><li>100% gluten-free and dairy-free.</li><li><b>Plant-based meats and cheeses contain soy. Off the Route 4 path. Closes at 2pm.</b></li></ul></div>
+</section>
+
+
+<section id="ev">
+  <h2>⚡ EV charging</h2>
+  <p>The truck is an F-150 Lightning. It takes CCS for fast charging and J1772 for Level 2.</p>
+  <div class="card "><h3>Sat night, near Everhome: IONNA fast charger</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=IONNA+Rechargery%2C+1600+Woodbury+Ave%2C+Portsmouth+NH+03801" target="_blank" rel="noopener">1600 Woodbury Ave, Portsmouth NH</a> (Whole Foods lot). About 4 min from Everhome.</li><li>DC fast, up to 400 kW. 8 CCS and 4 NACS connectors. Open 24/7.</li><li>Price is per kWh plus tax. Check the IONNA app, since its site shows different prices.</li><li><a href="https://www.ionna.com/rechargery/portsmouth/" target="_blank" rel="noopener">ionna.com</a></li></ul></div>
+  <div class="card "><h3>Sat dinner, near 110 Grill: ChargePoint</h3><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Portwalk+Place+Garage%2C+195+Hanover+St%2C+Portsmouth+NH" target="_blank" rel="noopener">Portwalk Garage, entrance at 195 Hanover St</a>. One universal ChargePoint charger for self-park. Fees apply.</li><li>Backup: <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Hanover+Parking+Garage%2C+34+Hanover+St%2C+Portsmouth+NH" target="_blank" rel="noopener">Hanover Parking Garage, 34 Hanover St</a>, just inside the Fleet St entrance. ChargePoint Level 2, 2 plugs. $2 per hour for 1 to 4 hr, plus parking.</li><li>Level 2 only, so this is a top-up during dinner.</li></ul></div>
+  <div class="card "><h3>Sun and Mon nights: Encore garage, Level 2</h3><ul class=""><li>40 Level 2 chargers on levels B2 and B3 of the free self-park garage, plus 21 in valet parking.</li><li>J1772 plugs, 208 volts, 64 amps, 25 ft cables.</li><li>Drivers report the chargers run through the Loop app (scan the QR code). There may be a charge.</li><li>Park in an EV spot only while charging. The truck stays plugged in all day Monday.</li></ul></div>
+</section>
+
+
+<section id="todo">
+  <h2>✅ Still to plan</h2>
+  <ul class="check">
+    <li>Decide on Aquarium tickets (optional)</li>
+    <li>Contact Terramia about dairy and soy</li>
+    <li>Plan Salem activities</li>
+    <li>Buy Mon train fares in mTicket (from Oct 5)</li>
+    <li>Recheck Mon train times the week before</li>
+    <li>Restaurants</li>
+    <li>Calendar blocks</li>
+  </ul>
+</section>
+
+</main>
+<footer>
+  <p>Last updated Sep 27, 2026. Times marked Est. are estimates. Check hours and train times before you go.</p>
+  <p>Map data © OpenStreetMap contributors. Routes: OSRM. Rail: MBTA.</p>
+  <p class="noprint"><button onclick="window.print()">Print or save as PDF</button></p>
+</footer>
+</body>
+</html>
