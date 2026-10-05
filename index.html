@@ -97,13 +97,42 @@ footer button{font:inherit;font-weight:700;padding:10px 16px;border-radius:10px;
   h2{font-size:18pt;} h3{font-size:12.5pt;}
 }
 
+body.locked{overflow:hidden;}
+body.locked #app{display:none !important;}
+#gate{display:none;min-height:100dvh;align-items:center;justify-content:center;padding:24px 18px;background:linear-gradient(160deg,#8A2F17,#B8472A 55%,#D99A2B);}
+body.locked #gate{display:flex;}
+.gatebox{width:100%;max-width:360px;background:#fff;border-radius:18px;padding:22px 20px 20px;box-shadow:0 12px 40px rgba(0,0,0,.25);}
+.gatebox h1{margin:0 0 6px;font-size:26px;color:var(--brown);}
+.gatebox p{margin:0 0 14px;color:var(--muted);font-size:16px;}
+.gatebox label{display:block;font-weight:700;font-size:14px;color:var(--brown);margin:0 0 6px;}
+.gatebox input{width:100%;font:700 22px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.2em;text-align:center;padding:14px 12px;border:2px solid var(--line);border-radius:12px;background:#FBF6EE;color:var(--ink);}
+.gatebox input:focus{outline:3px solid rgba(184,71,42,.35);border-color:var(--rust);}
+.gatebox button{width:100%;margin-top:12px;font:700 18px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:14px 12px;border:0;border-radius:12px;background:var(--rust);color:#fff;}
+.gateerr{min-height:22px;margin:10px 0 0;color:#8A2F17;font-weight:700;font-size:15px;}
+@media print{
+  body.locked #gate{display:none !important;}
+  body.locked #app{display:none !important;}
+  body.locked::after{content:"Enter the trip code to print.";display:block;padding:1in;font:14pt Georgia,serif;color:#6B3E26;}
+}
+
 </style>
 </head>
-<body>
+<body class="locked">
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gatetitle">
+  <form class="gatebox" id="gateform" autocomplete="off">
+    <h1 id="gatetitle">Boston + Salem</h1>
+    <p>Enter the trip code to open the plan.</p>
+    <label for="gatepin">Trip code</label>
+    <input id="gatepin" name="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="8" enterkeyhint="go" autofocus required>
+    <button type="submit">Open plan</button>
+    <p class="gateerr" id="gateerr" aria-live="polite"></p>
+  </form>
+</div>
+<div id="app">
 <img class="banner" src="banner.jpg" width="1280" height="720" alt="Tall ship in a harbor">
 <header class="hero">
   <h1>Boston + Salem</h1>
-  <p class="updated">Last updated Oct 3, 2026</p>
+  <p class="updated">Last updated Oct 5, 2026</p>
 </header>
 <nav class="daynav" aria-label="Jump to section">
   <label class="daypick">
@@ -248,9 +277,42 @@ footer button{font:inherit;font-weight:700;padding:10px 16px;border-radius:10px;
 
 </main>
 <footer>
-  <p>Last updated Oct 3, 2026. Check hours and train times before you go.</p>
+  <p>Last updated Oct 5, 2026. Check hours and train times before you go.</p>
   <p>Map data © OpenStreetMap contributors. Routes: OSRM. Rail: MBTA.</p>
   <p class="noprint"><button onclick="window.print()">Print or save as PDF</button></p>
 </footer>
+</div>
+<script>
+(function(){
+  var KEY = "tripUnlock_ztgemkuzfbss";
+  var CODE = "2020";
+  var body = document.body;
+  function unlock(){
+    try { localStorage.setItem(KEY, "1"); } catch (e) {}
+    body.classList.remove("locked");
+    var g = document.getElementById("gate");
+    if (g) g.setAttribute("hidden", "");
+  }
+  try {
+    if (localStorage.getItem(KEY) === "1") { unlock(); return; }
+  } catch (e) {}
+  var form = document.getElementById("gateform");
+  var pin = document.getElementById("gatepin");
+  var err = document.getElementById("gateerr");
+  if (!form) return;
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var v = (pin.value || "").trim();
+    if (v === CODE) {
+      err.textContent = "";
+      unlock();
+    } else {
+      err.textContent = "Wrong code. Try again.";
+      pin.value = "";
+      pin.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>
