@@ -209,6 +209,23 @@ html:not(.unlocked) #gate{display:flex;}
   html:not(.unlocked) #app{display:none !important;}
   html:not(.unlocked) body::after{content:"Enter the trip code to print.";display:block;padding:1in;font:14pt Georgia,serif;color:#6B3E26;}
 }
+/* Map figures: tap to open the zoomable viewer */
+a.mapopen{display:block;position:relative;border-radius:12px;-webkit-tap-highlight-color:transparent;}
+.mapzoom{position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;gap:6px;padding:7px 12px 7px 9px;border-radius:999px;background:rgba(43,33,27,.84);color:#fff;font:700 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;pointer-events:none;box-shadow:0 1px 4px rgba(0,0,0,.25);}
+.mapzoom svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;}
+/* Full-screen map viewer */
+html.mv-open,html.mv-open body{overflow:hidden;}
+.mv{position:fixed;inset:0;z-index:100;background:#17100B;}
+.mv[hidden]{display:none;}
+.mv-stage{position:absolute;inset:0;overflow:hidden;touch-action:none;cursor:grab;}
+.mv-stage:active{cursor:grabbing;}
+.mv-img{position:absolute;left:0;top:0;max-width:none;transform-origin:0 0;user-select:none;-webkit-user-select:none;-webkit-user-drag:none;will-change:transform;}
+.mv-close{position:absolute;z-index:2;top:max(12px, env(safe-area-inset-top));right:max(12px, env(safe-area-inset-right));display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px 0 16px;border:0;border-radius:999px;background:#fff;color:var(--brown);font:700 17px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.35);cursor:pointer;}
+.mv-close svg,.mv-tools svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;}
+.mv-tools{position:absolute;z-index:2;right:max(12px, env(safe-area-inset-right));bottom:max(16px, env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:10px;}
+.mv-tools button{width:50px;height:50px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#fff;color:var(--brown);box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;}
+.mv-hint{position:absolute;z-index:2;left:max(12px, env(safe-area-inset-left));bottom:max(18px, env(safe-area-inset-bottom));margin:0;padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;font-size:14px;pointer-events:none;}
+@media print{.mapzoom,.mv{display:none !important;}}
 
 </style>
 </head>
@@ -246,7 +263,7 @@ html:not(.unlocked) #gate{display:flex;}
     <a href="#mon"><b>Mon Oct 12</b><span>Salem by commuter rail. Hocus Pocus walking tour at 11am. The car stays at Encore.</span></a>
     <a href="#tue"><b>Tue Oct 13</b><span>Leave Encore about 10 to 11am. Home to Ottawa.</span></a>
   </div>
-  <figure><a href="overview.jpg" target="_blank" rel="noopener"><img src="overview.jpg" alt="Route map: Ottawa to Portsmouth, Boston and Salem" width="1200" height="675" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+  <figure class="mapfig"><a class="mapopen" href="overview.jpg" data-w="3240" data-h="2640" aria-label="Open map full screen: Route map: Ottawa to Portsmouth, Boston and Salem"><img src="overview-720.jpg" srcset="overview-720.jpg 720w, overview-1200.jpg 1200w" sizes="(min-width: 760px) 692px, calc(100vw - 28px)" alt="Route map: Ottawa to Portsmouth, Boston and Salem" width="720" height="587" loading="lazy" decoding="async"><span class="mapzoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Tap to zoom</span></a><figcaption>Tap the map to open it full screen, then pinch or double-tap to zoom. Map data © OpenStreetMap contributors.</figcaption></figure>
   <p class="small">Road routes from OSRM. Monday rail line from MBTA data. For planning only.</p>
 </section>
 
@@ -262,7 +279,7 @@ html:not(.unlocked) #gate{display:flex;}
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V21"/><path d="M8 11h8"/><path d="M4 13a8 8 0 0 0 16 0"/></svg></span><div><span class="time">Est. 4:30pm</span><b><a class="site" href="https://ussalbacore.org/" target="_blank" rel="noopener">USS Albacore</a> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Albacore+Park%2C+569+Submarine+Way%2C+Portsmouth+NH" target="_blank" rel="noopener">Map</a></b><p>About 15 to 20 min from the hotel. Aim to be aboard by 4:30pm. It closes at 5pm, so the visit is short.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about USS Albacore Map</span></summary><div class="more-body"><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Albacore+Park%2C+569+Submarine+Way%2C+Portsmouth+NH" target="_blank" rel="noopener">Albacore Park, 569 Submarine Way, Portsmouth NH</a></li><li>Open 9:30am to 5:00pm on Sat Oct 10 (same on Sunday).</li><li>Ages 13+: $14. Both kids are 13+, so $14 each ($56 for 4).</li><li>No booking needed. Self-guided, pay at the park.</li><li>No bags or backpacks on the submarine. Leave them in the car or the lockers.</li><li>If you will not reach the Albacore by about 4:30pm, skip it. Sunday at 9:30am is the backup. That pushes the Constitution later.</li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 2.5v6.5a2.5 2.5 0 0 0 5 0V2.5"/><path d="M7.5 2.5v19"/><path d="M19 15V2.5a4.5 4.5 0 0 0-4.5 4.5v6a2 2 0 0 0 2 2H19v6.5"/></svg></span><div><span class="time">5:30pm</span><b>Dinner at <a class="site" href="https://www.110grill.com/locations" target="_blank" rel="noopener">110 Grill</a> <span class="tag ok">Reserved</span> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=110+Grill%2C+103+Hanover+St%2C+Portsmouth+NH+03801" target="_blank" rel="noopener">Map</a></b><p>About 5 min from the Albacore. Party of 4.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Dinner at 110 Grill Map</span></summary><div class="more-body"><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=103+Hanover+St%2C+Portsmouth+NH+03801" target="_blank" rel="noopener">103 Hanover St (Portwalk Place), Portsmouth NH 03801</a></li><li><a class="tel" href="tel:+16033738312">(603) 373-8312</a> · Sat 11:30am to 10pm</li><li>Party of 4. Booked, confirmation in email. No deposit.</li><li>100% of the core menu can be made gluten free.</li><li>AllergyEats allergy-friendly. The manager on staff handles allergy orders.</li><li><b>Say dairy-free, gluten-free and soy-free when ordering.</b></li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
 </ol>
-  <figure><a href="portsmouth.jpg" target="_blank" rel="noopener"><img src="portsmouth.jpg" alt="Portsmouth area map: Everhome Suites, USS Albacore, 110 Grill" width="1000" height="640" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+  <figure class="mapfig"><a class="mapopen" href="portsmouth.jpg" data-w="2847" data-h="1695" aria-label="Open map full screen: Portsmouth area map: Everhome Suites, USS Albacore, 110 Grill"><img src="portsmouth-720.jpg" srcset="portsmouth-720.jpg 720w, portsmouth-1200.jpg 1200w" sizes="(min-width: 760px) 692px, calc(100vw - 28px)" alt="Portsmouth area map: Everhome Suites, USS Albacore, 110 Grill" width="720" height="429" loading="lazy" decoding="async"><span class="mapzoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Tap to zoom</span></a><figcaption>Tap the map to open it full screen, then pinch or double-tap to zoom. Map data © OpenStreetMap contributors.</figcaption></figure>
 </section>
 
 
@@ -275,11 +292,11 @@ html:not(.unlocked) #gate{display:flex;}
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 2.5v6.5a2.5 2.5 0 0 0 5 0V2.5"/><path d="M7.5 2.5v19"/><path d="M19 15V2.5a4.5 4.5 0 0 0-4.5 4.5v6a2 2 0 0 0 2 2H19v6.5"/></svg></span><div><span class="time">Est. 1:30pm</span><b>Lunch at <a class="site" href="https://bostonpublicmarket.org/" target="_blank" rel="noopener">Boston Public Market</a> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Boston+Public+Market%2C+100+Hanover+St%2C+Boston+MA" target="_blank" rel="noopener">Map</a></b><p><a class="site" href="https://bostonpublicmarket.org/vendors/jennifer-lees-allergen-friendly-vegan-shoppe/" target="_blank" rel="noopener">Jennifer Lee's Shoppe</a> inside is allergen free and vegan. Market open until 6pm.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Lunch at Boston Public Market Map</span></summary><div class="more-body"><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Boston+Public+Market%2C+100+Hanover+St%2C+Boston+MA" target="_blank" rel="noopener">100 Hanover St, Boston</a>. <b><a class="site" href="https://bostonpublicmarket.org/vendors/jennifer-lees-allergen-friendly-vegan-shoppe/" target="_blank" rel="noopener">Jennifer Lee's Shoppe</a></b> inside is Top 9 allergen free and vegan, with sweet and savory items.</li><li>Market open Sun 8am to 6pm. The stall opens 10am.</li><li><b>Savory items contain coconut and may contain legumes.</b></li><li><a href="https://bostonpublicmarket.org/" target="_blank" rel="noopener">bostonpublicmarket.org</a> · <a href="https://bostonpublicmarket.org/vendors/jennifer-lees-allergen-friendly-vegan-shoppe/" target="_blank" rel="noopener">Jennifer Lee's page</a></li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M15.5 21l-1.5-5-3-2.5 1-5.5"/><path d="M8 11.5l1.5-3.5 3-1 3 3 2.5 1"/><path d="M10.5 14.5 8.5 21"/></svg></span><div><span class="time">Est. 2:15 to 4:45pm</span><b>Sightseeing on foot</b><p>Faneuil Hall, Quincy Market, the waterfront, then the North End. Tap Show more for photos and details. Aquarium optional.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Sightseeing on foot</span></summary><div class="more-body"><h3 class="subhead"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M15.5 21l-1.5-5-3-2.5 1-5.5"/><path d="M8 11.5l1.5-3.5 3-1 3 3 2.5 1"/><path d="M10.5 14.5 8.5 21"/></svg></span><span>Afternoon on foot</span></h3><p class="small">The car stays at Haymarket. Walk times are from Boston Public Market. A good loop: Faneuil Hall, Quincy Market, the waterfront (Aquarium optional), then the North End, Paul Revere House and Old North Church, ending near Terramia for 5pm.</p><p class="small"><b>Food along the way is not checked for dairy-free, gluten-free and soy-free.</b> Bring snacks from Jennifer Lee's.</p><article class="card sight"><img src="see-faneuil.jpg" alt="Faneuil Hall, red brick with a white cupola" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9.5 12 4l9.5 5.5"/><path d="M3 21h18"/><path d="M5.5 10v8"/><path d="M10 10v8"/><path d="M14 10v8"/><path d="M18.5 10v8"/></svg></span><span class="t"><a class="site" href="https://www.nps.gov/bost/learn/historyculture/fh.htm" target="_blank" rel="noopener">Faneuil Hall</a></span></h3><p class="meta"><span class="walk">3 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Faneuil+Hall%2C+1+Faneuil+Hall+Square%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>Free. The National Park Service visitor center on the first floor is open 10am to 5pm on Sundays, with free Freedom Trail maps and rangers to ask.</p><p>Upstairs, the Great Hall has hosted public meetings and debates for over 275 years. Open 10am to 4:30pm, unless a city event closes it.</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Faneuil_Hall_Boston_Massachusetts.JPG" target="_blank" rel="noopener">Photo: Daderot, CC BY-SA 3.0</a></p></div></article><article class="card sight"><img src="see-quincy.jpg" alt="Quincy Market, columned entrance with a crowd" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v1a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0Z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-4h4v4"/></svg></span><span class="t"><a class="site" href="https://faneuilhallmarketplace.com/" target="_blank" rel="noopener">Quincy Market</a></span></h3><p class="meta"><span class="walk">5 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Quincy+Market%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>A long food hall with 25+ local eateries, right behind Faneuil Hall. Street performers play outside daily from 11am.</p><p>Marketplace hours Sun 11am to 7pm. Quincy Market turns 200 this year.</p><p><b>The food here is not checked for dairy-free, gluten-free and soy-free. Treat it as a look-around stop.</b></p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Quincy_Market_-_Boston,_MA.jpg" target="_blank" rel="noopener">Photo: Upstateherd, CC BY-SA 4.0</a></p></div></article><article class="card sight"><img src="see-wharf.jpg" alt="Boston waterfront from above, with wharves and the harbor" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 7c2 0 2-1.5 4-1.5S8 7 10 7s2-1.5 4-1.5S16 7 18 7s2-1.5 4-1.5"/><path d="M2 12.5c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg></span><span class="t"><a class="site" href="https://www.bostonharborwalk.org/" target="_blank" rel="noopener">Waterfront: Long Wharf and Harborwalk</a></span></h3><p class="meta"><span class="walk">10 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Long+Wharf%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>Free and open all the time. Walk out to the end of Long Wharf for harbor and boat views.</p><p>Christopher Columbus Park is right next to it, a good place to sit. Follow the Harborwalk along the water to the Aquarium.</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Christopher_Columbus_Waterfront_Park,_Boston,_MA.jpg" target="_blank" rel="noopener">Photo: Judyg143 on Pixabay, CC0</a></p></div></article><article class="card sight"><img src="see-aquarium.jpg" alt="Top of the Giant Ocean Tank at the New England Aquarium" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 12c1-3.5 5-6 8.5-6s6 2.5 7 6c-1 3.5-3.5 6-7 6s-7.5-2.5-8.5-6Z"/><path d="M6.5 12 2.5 8.5v7Z"/><circle cx="17.5" cy="11" r=".7"/></svg></span><span class="t"><a class="site" href="https://www.neaq.org/" target="_blank" rel="noopener">New England Aquarium</a> <span class="tag open">Optional</span></span></h3><p class="meta"><span class="walk">11 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=New+England+Aquarium%2C+1+Central+Wharf%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>Timed tickets. Adults $39.95, teens pay adult. Weekends and holidays often sell out. Not booked.</p><p>Weekend fall hours 9am to 6pm. Allow about 2 hr. Sea lion presentation 2pm and penguin presentation 2:30pm (schedule can change).</p><p><b>Food inside is not checked for dairy, gluten and soy.</b></p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Top_of_Giant_Ocean_Tank_at_New_England_Aquarium_Oct_2024_1.jpg" target="_blank" rel="noopener">Photo: 4300streetcar, CC BY 4.0</a></p></div></article><article class="card sight"><img src="see-northend.jpg" alt="Hanover Street in the North End, brick buildings and a church steeple" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V9l4-3 4 3v12"/><path d="M12 21V5l4-2.5L20 5v16"/><path d="M3 21h18"/><path d="M7 12h2M7 16h2M15 9h2M15 13h2"/></svg></span><span class="t">North End</span></h3><p class="meta"><span class="walk">4 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Hanover+St%2C+North+End%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>One of Boston's oldest neighborhoods. Narrow streets, Italian bakeries and cafes along Hanover Street. Free to wander.</p><p><b>Bakery treats like cannoli have dairy and gluten. Skip them.</b> Terramia, your 5pm dinner, is here on Salem Street.</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:2009_HanoverSt_Boston.jpg" target="_blank" rel="noopener">Photo: Tim Sackton from Somerville, MA, CC BY-SA 2.0</a></p></div></article><article class="card sight"><img src="see-revere.jpg" alt="Paul Revere House, a dark wooden house from the 1600s" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11 12 3.5 21 11"/><path d="M5.5 9.5V20.5h13V9.5"/><path d="M10 20.5v-6h4v6"/></svg></span><span class="t"><a class="site" href="https://www.paulreverehouse.org/" target="_blank" rel="noopener">Paul Revere House</a></span></h3><p class="meta"><span class="walk">6 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Paul+Revere+House%2C+19+North+Square%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>Built around 1680. Paul Revere lived here when he made his famous ride.</p><p>Open daily 10am to 5:15pm through Oct 31. Adults $6, ages 5 to 17 $1. A short visit, about 20 to 30 min.</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:The_Paul_Revere_House_(926711833).jpg" target="_blank" rel="noopener">Photo: Rob Young from United Kingdom, CC BY 2.0</a></p></div></article><article class="card sight"><img src="see-oldnorth.jpg" alt="Old North Church, brick church with a tall white steeple" width="800" height="450" loading="lazy"><div class="sbody"><h3 class="hic"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v4.5"/><path d="M10 4h4"/><path d="M6.5 21V11.5L12 7l5.5 4.5V21"/><path d="M3 21h18"/><path d="M10 21v-3.5a2 2 0 0 1 4 0V21"/></svg></span><span class="t"><a class="site" href="https://oldnorth.com/" target="_blank" rel="noopener">Old North Church</a></span></h3><p class="meta"><span class="walk">8 min walk</span><a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Old+North+Church%2C+193+Salem+St%2C+Boston+MA" target="_blank" rel="noopener">Map</a></p><p>Where two lanterns were hung in the steeple on April 18, 1775. Sunday visiting 12:30pm to 5pm, after the 11am service.</p><p>Discovery Pass $10 adults, $5 youth, with the crypt and a family scavenger hunt. Bell chamber tours Sun 2pm, 3pm and 4:30pm ($15 adults, $10 youth, steep stairs).</p><p>On Salem Street, about 5 min from Terramia. A good last stop before dinner.</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Old_North_Church_exterior_street.jpg" target="_blank" rel="noopener">Photo: LEvalyn, CC BY 4.0</a></p></div></article><button type="button" class="less" hidden>Show less</button></div></details></li>
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 2.5v6.5a2.5 2.5 0 0 0 5 0V2.5"/><path d="M7.5 2.5v19"/><path d="M19 15V2.5a4.5 4.5 0 0 0-4.5 4.5v6a2 2 0 0 0 2 2H19v6.5"/></svg></span><div><span class="time">5:00pm</span><b>Dinner at <a class="site" href="https://terramiaristorante.com/" target="_blank" rel="noopener">Terramia</a> <span class="tag ok">Reserved</span> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Terramia+Ristorante%2C+98+Salem+St%2C+Boston+MA+02113" target="_blank" rel="noopener">Map</a></b><p>Party of 4. Tell the server about gluten, dairy, and soy when you arrive.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Dinner at Terramia Map</span></summary><div class="more-body"><ul class=""><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Terramia+Ristorante%2C+98+Salem+St%2C+Boston+MA+02113" target="_blank" rel="noopener">98 Salem St, Boston MA 02113</a> · <a class="tel" href="tel:+16173405552">(617) 340-5552</a></li><li>Sun Oct 11 at 5:00pm. Party of 4. Opens 3:30pm Sundays.</li><li><b>Reserved. Confirmation is in email.</b></li><li>They noted gluten, dairy, and soy, and will tell the team. Tell the server again when you sit down. They get busy, and both the server and the kitchen need to hear it.</li><li>On Oct 1 they said they will do their best. Ask the server to walk each dish with the kitchen.</li><li><b>They cannot guarantee an allergen-free kitchen, or no cross-contact.</b></li><li><a href="https://terramiaristorante.com/" target="_blank" rel="noopener">terramiaristorante.com</a></li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
-<li id="encore"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17H3.5a1 1 0 0 1-1-1v-3.2a2 2 0 0 1 .4-1.2L5 8.6A2 2 0 0 1 6.6 7.8h8.6a2 2 0 0 1 1.5.7l2.6 3 1.7.5a1.4 1.4 0 0 1 1 1.3V16a1 1 0 0 1-1 1H19"/><path d="M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 12h16"/></svg></span><div><span class="time">After dinner</span><b>Drive 10 to 15 min to <a class="site" href="https://encorebostonharbor.com/" target="_blank" rel="noopener">Encore</a> <span class="tag ok">Booked</span> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Encore+Boston+Harbor%2C+1+Broadway%2C+Everett+MA" target="_blank" rel="noopener">Map</a></b><p>Walk back to Haymarket Garage first (about 10 min). Check-in is from 4pm, so the room is ready.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Drive 10 to 15 min to Encore Map</span></summary><div class="more-body"><ul class=""><li>Sun Oct 11 to Tue Oct 13. Booked, confirmation in email. Non-refundable. Cannot extend.</li><li>Check-in 4pm Sunday. Check-out 11am Tuesday. Early check-in from 11am if a room is ready: <a class="tel" href="tel:+18577707000">(857) 770-7000</a>.</li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Encore+Boston+Harbor%2C+1+Broadway%2C+Everett+MA" target="_blank" rel="noopener">1 Broadway, Everett MA</a></li><li>Premier Room, 2 double beds, harbor view.</li><li>Free self-parking.</li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
+<li id="encore"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 5v15"/><path d="M2.5 9h16a3 3 0 0 1 3 3v8"/><path d="M2.5 16.5h19"/><circle cx="7" cy="12.5" r="1.8"/></svg></span><div><span class="time">After dinner</span><b>Drive 10 to 15 min to <a class="site" href="https://encorebostonharbor.com/" target="_blank" rel="noopener">Encore</a> <span class="tag ok">Booked</span> <a class="map nw" href="https://www.google.com/maps/search/?api=1&amp;query=Encore+Boston+Harbor%2C+1+Broadway%2C+Everett+MA" target="_blank" rel="noopener">Map</a></b><p>Walk back to Haymarket Garage first (about 10 min). Check-in is from 4pm, so the room is ready.</p></div><details class="more"><summary><span class="sm-open">Show more</span><span class="sm-close">Show less</span><span class="vh"> about Drive 10 to 15 min to Encore Map</span></summary><div class="more-body"><ul class=""><li>Sun Oct 11 to Tue Oct 13. Booked, confirmation in email. Non-refundable. Cannot extend.</li><li>Check-in 4pm Sunday. Check-out 11am Tuesday. Early check-in from 11am if a room is ready: <a class="tel" href="tel:+18577707000">(857) 770-7000</a>.</li><li><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Encore+Boston+Harbor%2C+1+Broadway%2C+Everett+MA" target="_blank" rel="noopener">1 Broadway, Everett MA</a></li><li>Premier Room, 2 double beds, harbor view.</li><li>Free self-parking.</li></ul><button type="button" class="less" hidden>Show less</button></div></details></li>
 </ol>
   <p class="oneline"><b>The day in one line:</b> Portsmouth, USS Constitution, park at Haymarket, Boston Public Market lunch, Faneuil Hall, waterfront and North End on foot, dinner at Terramia at 5pm, Encore. Only two parking stops, and you're done driving for the night after dinner.</p>
   <p class="oneline tipline"><b>If Saturday slips:</b> the Albacore moves to Sunday at its 9:30am opening. Leave Portsmouth after that. The Constitution and lunch shift later. Terramia stays at 5:00pm.</p>
-  <figure><a href="sunday.jpg" target="_blank" rel="noopener"><img src="sunday.jpg" alt="Sunday map: USS Constitution, Haymarket, Terramia, Aquarium, Encore" width="1000" height="760" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+  <figure class="mapfig"><a class="mapopen" href="sunday.jpg" data-w="2460" data-h="2700" aria-label="Open map full screen: Sunday map: USS Constitution, Haymarket, Terramia, Aquarium, Encore"><img src="sunday-720.jpg" srcset="sunday-720.jpg 720w, sunday-1200.jpg 1200w" sizes="(min-width: 760px) 692px, calc(100vw - 28px)" alt="Sunday map: USS Constitution, Haymarket, Terramia, Aquarium, Encore" width="720" height="790" loading="lazy" decoding="async"><span class="mapzoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Tap to zoom</span></a><figcaption>Tap the map to open it full screen, then pinch or double-tap to zoom. Map data © OpenStreetMap contributors.</figcaption></figure>
 </section>
 
 
@@ -297,7 +314,7 @@ html:not(.unlocked) #gate{display:flex;}
 <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17H3.5a1 1 0 0 1-1-1v-3.2a2 2 0 0 1 .4-1.2L5 8.6A2 2 0 0 1 6.6 7.8h8.6a2 2 0 0 1 1.5.7l2.6 3 1.7.5a1.4 1.4 0 0 1 1 1.3V16a1 1 0 0 1-1 1H19"/><path d="M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M3 12h16"/></svg></span><div><span class="time">About 20 min later</span><b>Rideshare from Chelsea to Encore</b><p>About 10 min. Evening at Encore.</p></div></li>
 </ol>
   <p class="oneline"><b>The day in one line:</b> Encore, rideshare to Chelsea, train to Salem, Hocus Pocus walking tour 11am to 1:30pm, Salem afternoon, train back to Chelsea, rideshare to Encore. No driving or parking in Salem, and the car stays at Encore.</p>
-  <figure><a href="monday.jpg" target="_blank" rel="noopener"><img src="monday.jpg" alt="Monday map: Encore, Chelsea station, Salem station, downtown Salem" width="1000" height="860" loading="lazy"></a><figcaption>Tap the map to enlarge. Map data © OpenStreetMap contributors.</figcaption></figure>
+  <figure class="mapfig"><a class="mapopen" href="monday.jpg" data-w="2646" data-h="2052" aria-label="Open map full screen: Monday map: Encore, Chelsea station, Salem station, downtown Salem"><img src="monday-720.jpg" srcset="monday-720.jpg 720w, monday-1200.jpg 1200w" sizes="(min-width: 760px) 692px, calc(100vw - 28px)" alt="Monday map: Encore, Chelsea station, Salem station, downtown Salem" width="720" height="558" loading="lazy" decoding="async"><span class="mapzoom" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>Tap to zoom</span></a><figcaption>Tap the map to open it full screen, then pinch or double-tap to zoom. Map data © OpenStreetMap contributors.</figcaption></figure>
 </section>
 
 
@@ -347,6 +364,12 @@ html:not(.unlocked) #gate{display:flex;}
   <p>Map data © OpenStreetMap contributors. Routes: OSRM. Rail: MBTA.</p>
   <p class="noprint"><button type="button" onclick="window.print()">Print or save as PDF</button></p>
 </footer>
+<div id="mapview" class="mv" role="dialog" aria-modal="true" aria-label="Map, full screen" hidden>
+  <div class="mv-stage"><img class="mv-img" alt="" draggable="false"></div>
+  <button type="button" class="mv-close" aria-label="Close map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>Close</button>
+  <div class="mv-tools"><button type="button" class="mv-in" aria-label="Zoom in"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" class="mv-out" aria-label="Zoom out"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button></div>
+  <p class="mv-hint">Pinch, drag or double-tap to zoom</p>
+</div>
 </div>
 <script>
 (function(){
@@ -405,6 +428,96 @@ html:not(.unlocked) #gate{display:flex;}
     }
   });
 })();
+</script>
+<script>
+(function(){
+  var mv = document.getElementById("mapview"); if (!mv) return;
+  var stage = mv.querySelector(".mv-stage"), img = mv.querySelector(".mv-img"), closeBtn = mv.querySelector(".mv-close");
+  var s = 1, fit = 1, tx = 0, ty = 0, iw = 1, ih = 1, opener = null, last = null, lastTap = 0;
+  var pts = new Map(), startDist = 0, startScale = 1, startMid = null, startT = null;
+  function W(){ return stage.clientWidth; } function H(){ return stage.clientHeight; }
+  function maxS(){ return Math.max(fit * 2, 1.25); }
+  function apply(){
+    var w = iw * s, h = ih * s;
+    tx = w <= W() ? (W() - w) / 2 : Math.min(0, Math.max(W() - w, tx));
+    ty = h <= H() ? (H() - h) / 2 : Math.min(0, Math.max(H() - h, ty));
+    img.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
+  }
+  function zoomAt(ns, cx, cy){
+    ns = Math.max(fit, Math.min(maxS(), ns));
+    tx = cx - (cx - tx) * ns / s; ty = cy - (cy - ty) * ns / s; s = ns; apply();
+  }
+  function rel(e){ var r = stage.getBoundingClientRect(); return {x: e.clientX - r.left, y: e.clientY - r.top}; }
+  function open(a){
+    opener = a; iw = +a.getAttribute("data-w"); ih = +a.getAttribute("data-h");
+    var thumb = a.querySelector("img");
+    img.src = thumb.currentSrc || thumb.src; img.alt = thumb.alt;
+    img.style.width = iw + "px"; img.style.height = ih + "px";
+    mv.hidden = false; document.documentElement.classList.add("mv-open");
+    fit = Math.min(W() / iw, H() / ih); s = fit; tx = 0; ty = 0; apply();
+    var full = new Image();
+    full.onload = function(){ if (!mv.hidden && opener === a) img.src = full.src; };
+    full.src = a.getAttribute("href");
+    closeBtn.focus({preventScroll: true});
+    try { history.pushState({mapview: 1}, ""); } catch (e) {}
+  }
+  function close(fromPop){
+    if (mv.hidden) return;
+    mv.hidden = true; document.documentElement.classList.remove("mv-open");
+    img.removeAttribute("src"); pts.clear(); last = null;
+    if (opener) opener.focus({preventScroll: true});
+    if (!fromPop && history.state && history.state.mapview) history.back();
+  }
+  document.querySelectorAll("a.mapopen").forEach(function(a){
+    a.addEventListener("click", function(e){ e.preventDefault(); open(a); });
+  });
+  closeBtn.addEventListener("click", function(){ close(false); });
+  window.addEventListener("popstate", function(){ close(true); });
+  document.addEventListener("keydown", function(e){
+    if (mv.hidden) return;
+    if (e.key === "Escape") close(false);
+    else if (e.key === "+" || e.key === "=") zoomAt(s * 1.5, W() / 2, H() / 2);
+    else if (e.key === "-") zoomAt(s / 1.5, W() / 2, H() / 2);
+  });
+  mv.querySelector(".mv-in").addEventListener("click", function(){ zoomAt(s * 1.6, W() / 2, H() / 2); });
+  mv.querySelector(".mv-out").addEventListener("click", function(){ zoomAt(s / 1.6, W() / 2, H() / 2); });
+  window.addEventListener("resize", function(){
+    if (mv.hidden) return;
+    var wasFit = s <= fit + 1e-6; fit = Math.min(W() / iw, H() / ih);
+    if (wasFit || s < fit) s = fit; apply();
+  });
+  stage.addEventListener("wheel", function(e){
+    e.preventDefault(); var q = rel(e); zoomAt(s * Math.exp(-e.deltaY * 0.0015), q.x, q.y);
+  }, {passive: false});
+  stage.addEventListener("pointerdown", function(e){
+    try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+    var q = rel(e); pts.set(e.pointerId, q);
+    if (pts.size === 2){
+      var p = Array.from(pts.values());
+      startDist = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y) || 1; startScale = s;
+      startMid = {x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2}; startT = {x: tx, y: ty};
+    } else if (pts.size === 1){
+      last = q; var now = Date.now();
+      if (now - lastTap < 300){ zoomAt(s > fit * 1.5 ? fit : s * 2.5, q.x, q.y); lastTap = 0; } else lastTap = now;
+    }
+  });
+  stage.addEventListener("pointermove", function(e){
+    if (!pts.has(e.pointerId)) return;
+    var q = rel(e); pts.set(e.pointerId, q);
+    if (pts.size === 2){
+      var p = Array.from(pts.values());
+      var d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+      var mid = {x: (p[0].x + p[1].x) / 2, y: (p[0].y + p[1].y) / 2};
+      var ns = Math.max(fit, Math.min(maxS(), startScale * d / startDist));
+      tx = mid.x - (startMid.x - startT.x) * ns / startScale; ty = mid.y - (startMid.y - startT.y) * ns / startScale; s = ns; apply();
+    } else if (pts.size === 1 && last){
+      tx += q.x - last.x; ty += q.y - last.y; last = q; apply();
+    }
+  });
+  function up(e){ pts.delete(e.pointerId); last = pts.size === 1 ? Array.from(pts.values())[0] : null; }
+  stage.addEventListener("pointerup", up); stage.addEventListener("pointercancel", up);
+})();
+
 </script>
 </body>
 </html>
