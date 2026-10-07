@@ -330,10 +330,10 @@ html:not(.unlocked) #gate{display:flex;}
 
 /* Map buttons under each day header (map loads only when tapped) */
 .mapbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
-.mapbtn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 16px 0 13px;border-radius:999px;font:600 15px/1 var(--font);color:var(--blue-text);
+a.mapopen.mapbtn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 16px 0 13px;border-radius:999px;font:600 15px/1 var(--font);color:var(--blue-text);
   background:var(--glass-strong);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-edge);box-shadow:inset 0 1px 0 var(--glass-edge),0 1px 3px rgba(0,0,0,.06);text-decoration:none;}
 .mapbtn svg{display:block;width:19px;height:19px;margin:0 2px 0 0;vertical-align:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;flex:0 0 auto;}
-.mapbtn:active{transform:scale(.97);opacity:.8;}
+a.mapbtn:active{transform:scale(.97);opacity:.8;}
 @media (prefers-reduced-motion:reduce){.mapbtn:active{transform:none;}}
 @media print{.mapbar{display:none !important;}}
 
