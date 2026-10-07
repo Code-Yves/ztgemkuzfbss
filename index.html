@@ -564,7 +564,8 @@ html:not(.unlocked) #gate{display:flex;}
   function open(a){
     opener = a; iw = +a.getAttribute("data-w"); ih = +a.getAttribute("data-h");
     var thumb = a.querySelector("img");
-    img.src = thumb.currentSrc || thumb.src; img.alt = thumb.alt;
+    if (thumb) { img.src = thumb.currentSrc || thumb.src; img.alt = thumb.alt; }
+    else { img.removeAttribute("src"); img.alt = (a.getAttribute("aria-label") || "Map").replace(/^Open [^:]*: /, ""); }
     img.style.width = iw + "px"; img.style.height = ih + "px";
     mv.hidden = false; document.documentElement.classList.add("mv-open");
     fit = Math.min(W() / iw, H() / ih); s = fit; tx = 0; ty = 0; apply();
